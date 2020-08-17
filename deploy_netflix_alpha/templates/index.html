@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+   <br>
+	<h1>Get the best movie recommendations for yourself!</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict"method="post" id="predict">
+	<label for="username"> Username: </label><br>
+	<input type="text" id="username" name="username"<br><br>
+
+	<label for="profound"> Profound & Deep (between 0 and 5):</label><br>
+  	<input type="range" id="profound" name="profound" min="0" max="5" value="0" step="1" oninput="profound_amount.value=profound.value">
+  	<output name="profound_amount" id="profound_amount" for="profound">0</output><br> <br>
+
+	<label for="music"> Entertaining Music (between 0 and 5):</label><br>
+  	<input type="range" id="music" name="music" min="0" max="5" step = "1" value="0" oninput="music_amount.value=music.value">
+  	<output name="music_amount" id="music_amount" for="music">0</output><br><br>
+
+	<label for="realistic"> Realistic Settings (between 0 and 5):</label><br>
+  	<input type="range" id="realistic" name="realistic" min="0" max="5" step = "1" value="0" oninput="realistic_amount.value=realistic.value">
+  	<output name="realistic_amount" id="realistic_amount" for="realistic">0</output><br><br>
+
+	<label for="exciting"> Exciting (between 0 and 5):</label><br>
+  	<input type="range" id="exciting" name="exciting" min="0" max="5" step = "1" value="0" oninput="exciting_amount.value=exciting.value">
+  	<output name="exciting_amount" id="exciting_amount" for="exciting">0</output><br><br>
+
+	<label for="fun"> Fun (between 0 and 5):</label><br>
+  	<input type="range" id="fun" name="fun" min="0" max="5" step = "1" value="0" oninput="fun_amount.value=fun.value">
+  	<output name="fun_amount" id="fun_amount" for="fun">0</output><br><br>
+
+	<label for="imdb"> Minimum required IMDB Rating (0-10): </label><br>
+	<input type="range" id= "imdb" name="imdb" min="0" max="10" step = "1" value="0" oninput="imdb_amount.value=imdb.value">
+	<output name="imdb_amount" id="imdb_amount" for="fun">0</output><br><br>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Get Movies!</button>
+    </form>
+
+   <br>
+   <br>
+
+ </div>
+
+
+</body>
+</html>

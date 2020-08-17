@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#grad1 {
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, red, blue); /* Standard syntax (must be last) */
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  border: 4px solid green;
+  /* height: 1000px; Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body id="grad1" >
+
+<div class="row">
+    <div class="column" style="background-color:#ccc;">
+       {{ requirement }} <br>
+       Memorable Evergreen Score = {{ user_input[0] }} <br>
+       Soul Touching Music Score = {{ user_input[1] }} <br>
+       Feel at the Scene Score = {{ user_input[2] }} <br>
+       Exciting Goosebump Score = {{ user_input[3] }} <br>
+       Heart Lifting Humour Score = {{ user_input[4] }} <br>
+       {{ imdb_score }} <br>
+       <br>
+       {{ opener }}
+    </div>
+</div>
+<br>
+
+<div class="row">
+
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_1']['title'] }}</h2>
+       <img src={{ prediction['title_1']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_1']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_1']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_1']['reviews'][0] }}</p>
+       <p>{{ prediction['title_1']['reviews'][1] }}</p>
+       <p>{{ prediction['title_1']['reviews'][2] }}</p>
+   </div>
+   
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_2']['title'] }}</h2>
+       <img src={{ prediction['title_2']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_2']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_2']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_2']['reviews'][0] }}</p>
+       <p>{{ prediction['title_2']['reviews'][1] }}</p>
+       <p>{{ prediction['title_2']['reviews'][2] }}</p>
+   </div>
+   
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_3']['title'] }}</h2>
+       <img src={{ prediction['title_3']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_3']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_3']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_3']['reviews'][0] }}</p>
+       <p>{{ prediction['title_3']['reviews'][1] }}</p>
+       <p>{{ prediction['title_3']['reviews'][2] }}</p>
+   </div>
+   
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_4']['title'] }}</h2>
+       <img src={{ prediction['title_4']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_4']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_4']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_4']['reviews'][0] }}</p>
+       <p>{{ prediction['title_4']['reviews'][1] }}</p>
+       <p>{{ prediction['title_4']['reviews'][2] }}</p>
+   </div>
+   
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_5']['title'] }}</h2>
+       <img src={{ prediction['title_5']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_5']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_5']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_5']['reviews'][0] }}</p>
+       <p>{{ prediction['title_5']['reviews'][1] }}</p>
+       <p>{{ prediction['title_5']['reviews'][2] }}</p>
+   </div>
+</div>
+<br>
+<div class="row">
+
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_6']['title'] }}</h2>
+       <img src={{ prediction['title_6']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_6']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_6']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_6']['reviews'][0] }}</p>
+       <p>{{ prediction['title_6']['reviews'][1] }}</p>
+       <p>{{ prediction['title_6']['reviews'][2] }}</p>
+   </div>
+   
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_7']['title'] }}</h2>
+       <img src={{ prediction['title_7']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_7']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_7']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_7']['reviews'][0] }}</p>
+       <p>{{ prediction['title_7']['reviews'][1] }}</p>
+       <p>{{ prediction['title_7']['reviews'][2] }}</p>
+   </div>
+   
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_8']['title'] }}</h2>
+       <img src={{ prediction['title_8']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_8']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_8']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_8']['reviews'][0] }}</p>
+       <p>{{ prediction['title_8']['reviews'][1] }}</p>
+       <p>{{ prediction['title_8']['reviews'][2] }}</p>
+   </div>
+   
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_9']['title'] }}</h2>
+       <img src={{ prediction['title_9']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_9']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_9']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_9']['reviews'][0] }}</p>
+       <p>{{ prediction['title_9']['reviews'][1] }}</p>
+       <p>{{ prediction['title_9']['reviews'][2] }}</p>
+   </div>
+   
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction['title_10']['title'] }}</h2>
+       <img src={{ prediction['title_10']['img_url'] }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction['title_10']['imdb_rating'] }} </h3>
+       <p>Description: {{ prediction['title_10']['description'] }} </p>
+       <hr style="width:75%;text-align:center;margin-left:0">
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction['title_10']['reviews'][0] }}</p>
+       <p>{{ prediction['title_10']['reviews'][1] }}</p>
+       <p>{{ prediction['title_10']['reviews'][2] }}</p>
+   </div>
+</div>
+
+</body>
+</html>

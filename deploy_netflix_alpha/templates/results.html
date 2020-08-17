@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+<div class="login">
+   {{ requirement }} <br>
+   {{ profound_score }} <br>
+   {{ music_score }} <br>
+   {{ realistic_score }} <br>
+   {{ exciting_score }} <br>
+   {{ fun_score }} <br>
+   {{ imdb_score }} <br>
+   <br>
+   {{ opener }} <br>
+</div>
+
+<div class="row">
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction_title_1 }}</h2>
+       <img src={{ prediction_img_1 }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction_rating_1 }} </h3>
+       <p>Description: {{ prediction_desc_1 }} </p>
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction_t1_rev1 }}</p>
+       <p>{{ prediction_t1_rev2 }}</p>
+       <p>{{ prediction_t1_rev3 }}</p>
+   </div>
+   <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction_title_2 }}</h2>
+       <img src={{ prediction_img_2 }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction_rating_2 }} </h3>
+       <p>Description: {{ prediction_desc_2 }} </p>
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction_t2_rev1 }}</p>
+       <p>{{ prediction_t2_rev2 }}</p>
+       <p>{{ prediction_t2_rev3 }}</p>
+   </div>
+      <div class="column" style="background-color:#ccc;">
+       <h2>{{ prediction_title_3 }}</h2>
+       <img src={{ prediction_img_3 }} alt="imdb.com" style="width:150px;height:200px;">
+       <h3>IMDB Rating: {{ prediction_rating_3 }} </h3>
+       <p>Description: {{ prediction_desc_3 }} </p>
+       <h3>What do most people say about the movie: </h3>
+       <p>{{ prediction_t3_rev1 }}</p>
+       <p>{{ prediction_t3_rev2 }}</p>
+       <p>{{ prediction_t3_rev3 }}</p>
+   </div>
+</div>
+
+</body>
+</html>
